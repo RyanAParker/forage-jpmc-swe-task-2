@@ -1,0 +1,41 @@
+From ddfaf11826e3bfa365583960cc012f11f9797ee3 Mon Sep 17 00:00:00 2001
+From: RyanAParker <ryanadamparker96@gmail.com>
+Date: Tue, 6 Feb 2024 18:41:55 +1100
+Subject: [PATCH 2/2] Solution
+
+---
+ src/Graph.tsx | 18 ++++++++----------
+ 1 file changed, 8 insertions(+), 10 deletions(-)
+
+diff --git a/src/Graph.tsx b/src/Graph.tsx
+index 720becf..fc15f82 100644
+--- a/src/Graph.tsx
++++ b/src/Graph.tsx
+@@ -49,16 +49,14 @@ class Graph extends Component<IProps, {}> {
+ 
+       // Add more Perspective configurations here.
+       elem.load(this.table);
+-      elem.setAttribute('view', 'y_line');
+-      elem.setAttribute('column-pivots', '["stock"]');
+-      elem.setAttribute('row-pivots', '["timestamp"]');
+-      elem.setAttribute('columns', '["top_ask_price"]');
+-      elem.setAttribute('aggregates',`
+-      {"stock":"distinct count:,
+-      "top_ask_price":"avg",
+-      "top_bid_price":"avg",
+-      "timestamp":"distinct count"}`);
+-    }
++      elem.setAttribute("view", "y_line");
++      elem.setAttribute("column-pivots", '["stock"]');
++      elem.setAttribute("row_pivots", '["timestamp"]');
++      elem.setAttribute("columns", '["top_ask_price"]');
++      elem.setAttribute("aggregates",
++          '{"stock":"distinct_count", "top_ask_price":"avg", "top_bid_price":"avg", "timestamp":"distinct_count"}'
++      );
++  }
+   }
+ 
+   componentDidUpdate() {
+-- 
+2.43.0.windows.1
+
